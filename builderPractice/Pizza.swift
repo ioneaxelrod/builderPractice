@@ -24,10 +24,11 @@ class Pizza {
     }
     
     func description() -> String {
-        var result = "\(self.orderNumber) is a \(size) inch \(pizzaType)pizza with \(sauce) sauce and "
+        var result = "\(self.orderNumber) is a \(size) inch \(pizzaType) style pizza with \(sauce) sauce and"
         for item in toppings {
-            result = result.appending("\(item) and")
+            result = result.appending(" \(item) and")
         }
+        result = String(result.characters.dropLast(4))
         return result
     }
     
